@@ -1,0 +1,41 @@
+@use '../../grobal/variable' as *;
+@use '../../grobal/mixin' as *;
+
+/* 共通タイトル */
+.common-sec-title {
+  text-align: center;
+  h2 {
+    font-size: 3.6rem;
+    // font-size: min(vw(36), 36px);
+    // font-size: vw(50);
+    font-weight: 700;
+    color: $color-pink;
+    display: inline-block;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 5rem;
+      // width: min(vw(50), 50px);
+      height: 3.5rem;
+      // height: min(vw(35), 35px);
+      background: $color-pink;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      /* clip-path: polygon(0 0, 100% 0, 100% 100%); */
+      /* clip-path: polygon(0 0, 100% 50%, 0 100%); */
+    }
+    &::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+      left: -6.5rem;
+      // left: max(vw(-65), -65px);
+    }
+    &::after {
+      clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+      right: -6.5rem;
+      // right: max(vw(-65), -65px);
+    }
+  }
+}

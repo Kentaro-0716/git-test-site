@@ -1,0 +1,74 @@
+@use '../../grobal/variable' as *;
+@use '../../grobal/mixin' as *;
+
+.common-button {
+  width: 26rem;
+  height: 6rem;
+  border: 0.2rem solid $color-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: $color-pink;
+  position: relative;
+  font-weight: 700;
+  @include sp {
+    width: 22rem;
+  }
+  .arrow {
+    display: block;
+    width: 9rem;
+    height: 0.2rem;
+    background: $color-pink;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -4.5rem;
+    transition: all .4s;
+    @include sp {
+      width: 8rem;
+      right: -4rem;
+    }
+    &::before {
+      content: '';
+      width: 1.5rem;
+      height: 0.2rem;
+      background: $color-pink;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotate(30deg);
+      transform-origin: right center;
+    }
+  }
+  &:hover {
+    .arrow {
+      right: -6.6rem;
+    }
+  }
+}
+
+.common-button-g {
+  width: 26rem;
+  height: 6rem;
+  border: 0.2rem solid $color-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(90deg, $color-pink 0%, $color-blue 50%, $color-pink 100%);
+  background-size: 200% 100%;
+  background-position: 0 100%;
+  color: #fff;
+  position: relative;
+  font-weight: 700;
+  transition: all .4s;
+  @include sp {
+    width: 22rem;
+  }
+  &:hover {
+    background-position: 100% 100%;
+    // background: linear-gradient(90deg, $color-blue, $color-pink);
+  }
+}
+

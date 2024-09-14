@@ -1,0 +1,31 @@
+@use '../grobal/variable' as *;
+@use '../grobal/mixin' as *;
+
+
+#about {
+  .about-sec {
+    padding: 7rem 0 16rem;
+    &__items {
+
+    }
+    .about-sec-item {
+      &:not(:first-of-type) {
+        margin-top: 7rem;
+      }
+      &__title {
+        margin-bottom: 1.5rem;
+        h3 {
+          font-size: 3rem;
+          font-weight: 700;
+          color: $color-blue;
+        }
+      }
+      &__text {
+        p {
+
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+$font-sans: "Noto Sans JP", sans-serif;
+
+$color-pink: #f66;
+$color-blue: #66f;
+$bg-cream: #f2f2f2;
+
+@function vw($pixelSize, $baseWidth: 1060) {
+  @return calc($pixelSize / $baseWidth * 100vw);
+}
+
+// 
+// .test {
+//   width: vw(300, 1366);
+//   // width: calc(300 / 1366 * 100vw);
+// }
+
+// @function vwM($pixelSize, $baseWidth: 1060) {
+//   @return min(vw($pixelSize), $pixelSize * 1px);
+// }
+

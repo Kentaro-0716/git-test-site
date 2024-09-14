@@ -1,0 +1,96 @@
+@use '../../grobal/variable' as *;
+@use '../../grobal/mixin' as *;
+
+/* fv */
+.fv {
+  position: relative;
+  &__bg-image {
+    @include sp {
+      height: 70rem;
+    }
+    img {
+      @include sp {
+        height: 100%;
+        object-fit: cover;
+        object-position: 70% 50%;
+      }
+    }
+  }
+  
+  &__contents {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      60deg,
+      rgba(255, 0, 0, 0.5),
+      rgba(0, 0, 255, 0.5)
+    );
+    /* background: #f00; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    animation: gradation-bg 10s linear infinite;
+    @include sp {
+      padding-top: 6rem;
+    }
+    h2 {
+      width: calc(750 / 1366 * 100vw);
+      animation: fadeIn 2s ease 1s both;
+      @include sp {
+        width: calc(330 / 375 * 100vw);
+      }
+    }
+  }
+}
+
+@keyframes gradation-bg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// 下層ページのFV
+.child-fv {
+  position: relative;
+  &__contents {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sp {
+      
+    }
+    h2 {
+      font-size: 7.5rem;
+      font-weight: 700;
+      color: $color-pink;
+      @include sp {
+        font-size: 3.6rem;
+      }
+    }
+  }
+}

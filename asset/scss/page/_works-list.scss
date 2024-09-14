@@ -1,0 +1,60 @@
+@use '../grobal/variable' as *;
+@use '../grobal/mixin' as *;
+
+#works-list {
+  background: #f2f2f2;
+  .works-list-sec {
+    padding: 10rem 3rem;
+    &__tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      row-gap: 3rem;
+    }
+    .works-list-sec-tab {
+      width: 29rem;
+      height: 6rem;
+      border: 0.2rem solid $color-blue;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-blue;
+      font-weight: 700;
+      border-radius: 1rem;
+      cursor: pointer;
+      @include sp {
+        width: 10rem;
+        height: 4.5rem;
+        font-size: 1.6rem;
+      }
+    }
+    .works-list-sec-tab.current {
+      background: $color-blue;
+      color: #fff;
+    }
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 32rem);
+      justify-content: space-between;
+      row-gap: 2rem;
+    }
+    .works-list-sec-item {
+      padding: 2rem;
+      background: #fff;
+      &__image {
+
+      }
+      &__text {
+        .client {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+
