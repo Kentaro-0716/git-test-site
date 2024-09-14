@@ -1,0 +1,23 @@
+# ログファイル除外
+*.log
+
+# ウィンドウズ生成ファイル除外
+Thumbs.db
+.DS_store
+
+# アプリケーションファイル除外
+*.app
+*.exe
+*.war
+
+# サイズが大きいメディアファイル除外
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+#cssフォルダの中の「style.css」と「style.css.map」を除外
+asset/css/**/style.css
+asset/css/**/style.css.map
